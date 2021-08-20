@@ -1,4 +1,51 @@
-*{
-    margin: 0;
-    padding: 0;
+*{margin: 0;padding: 0;}
+html {font-size: 16px}
+html,body{-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+ul li {list-style-type:none;cursor:pointer;}
+span{cursor:pointer;}
+a {
+    text-decoration: none;
 }
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none;
+}
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+    text-decoration: none;
+}
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+    text-decoration: none;
+}
+input, button, select, textarea {
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+@font-face {
+    font-family: 'iconfont';/*声明一个名为iconfont的字体变量*/
+    src: url('../font/方正吕建德字体简体.ttf') 
+}
+@font-face {
+    font-family: 'iconfont2';
+    src: url('../font/汉仪尚巍手书W.ttf') 
+}
+/* 变量 */
+:root {
+  --textColor: #1f1f1f; /* 文字主色调 */
+  --textColorHover: #c21f30; /* 文字主色调 hover */
+  --myfont:"iconfont";    
+  --myfont2:"iconfont2"; 
+}
+
+

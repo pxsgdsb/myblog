@@ -1,0 +1,39 @@
+#app{
+    .box{
+        max-width: 80%;
+        padding: 0 2rem;
+        .nav{
+            h1{
+                text-align: end;
+            }
+            ul{
+                li{
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .home{
+            flex-wrap: wrap;
+            .home_left{
+                width: 100%;
+                ul{
+                    border-right:none;
+                    padding-right: 0;
+                    li{
+                        .title{
+                            &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .home_right{
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+#app{
+    .box{
+        max-width: 75%;
+        padding: 0 2rem;
+        .nav{
+            h1{
+                text-align: end;
+            }
+            ul{
+                li{
+                    &:first-child {
+                      margin-left: 0;
+                    }
+                }
+            }
+        }
+        .home{
+            .home_left{
+                width: 70%;
+                ul{
+                    border-right:1px solid var(--textColor);
+                    padding-right: 1rem;
+                    li{
+                        .title{
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+            .home_right{
+                width: 60%;
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}
