@@ -1,7 +1,7 @@
 <template>
   <div class="home_left">
      <ul>
-        <li v-for="(item,index) in listData" :key="index">
+        <li v-for="(item,index) in listData" :key="index" @click="openArticle(item.id)">
           <p class="title">{{item.article_title}}</p>
           <p class="date">{{item.add_time}}</p>
           <p>{{item.article_describe}}</p>
@@ -22,10 +22,18 @@ export default {
     this.getData()
   },
   methods: {
+      //获取文章list
       getData() {
-        articleList().then(res => {
+        articleList({page:1,pageSize:10}).then(res => {
           this.listData = res.code===20000?res.data:this.listData;
-          // console.log(this.listData);
+        })
+      },
+      //点击文章
+      openArticle(id){
+        // console.log(id);
+        this.$router.push({
+          path: '/Article',
+          query: {id}
         })
       }
   }

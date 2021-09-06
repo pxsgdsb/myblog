@@ -4,25 +4,40 @@
       <p>分类</p>
       <hr>
       <ul>
-        <li><div>&nbsp;&nbsp;</div><span>css(3)</span></li>
-        <li><div>&nbsp;&nbsp;</div><span>js(2)</span></li>
-        <li><div>&nbsp;&nbsp;</div><span>nodejs(3)</span></li>
-        <li><div>&nbsp;&nbsp;</div><span>vue(3)</span></li>
-        <li><div>&nbsp;&nbsp;</div><span>css(3)</span></li>
+        <li v-for="(item,index) in classList" :key="index" :data-id="item.id"><div>&nbsp;&nbsp;</div><span>{{item.class_name}}</span></li>
       </ul>
       <p>标签</p>
       <hr>
       <div>
-        <span>css</span><span>python</span><span>net</span><span>go</span><span>php</span><span>js</span>
-        <span>html</span><span>mqtt</span><span>net</span><span>nodejs</span><span>php</span><span>js</span>
+        <span v-for="(item,index) in labelList" :key="index" :data-id="item.id">{{item.label_name}}</span>
       </div>
      
   </div>
 </template>
 
 <script>
+import {getClassList,getLabelList} from '@/request/getArticleData.js'
 export default {
-
+  data(){
+    return{
+      classList:[],
+      labelList:[]
+    }
+  },
+  created() {
+    this.getData()
+  },
+  methods: {
+      //分类与标签数据
+      getData() {
+        getClassList().then(res=>{
+          this.classList = res.code===20000 || res.code===0 ? res.data : this.classList;
+        })
+        getLabelList().then(res=>{
+          this.labelList = res.code===20000 || res.code===0 ? res.data : this.labelList;
+        })
+      }
+  }
 }
 </script>
 

@@ -42,11 +42,11 @@ service.interceptors.response.use(
         return dataAxios
     },
     (error) => {
-        Message({
-            message: error,
-            type: 'error',
-            duration: 3 * 1000
-        })
+        // Message({
+        //     message: error,
+        //     type: 'error',
+        //     duration: 3 * 1000
+        // })
         return Promise.reject(error)
     }
 )
